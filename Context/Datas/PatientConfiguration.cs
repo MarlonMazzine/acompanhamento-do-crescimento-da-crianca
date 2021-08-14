@@ -38,7 +38,6 @@ namespace WebApplication.TCC.Context.Datas
                 .Property(c => c.CreationDate)
                 .HasColumnName("creation_date")
                 .HasColumnType("TIMESTAMP WITHOUT TIME ZONE")
-                .HasDefaultValue("CURRENT_TIMESTAMP")
                 .IsRequired();
         }
     }

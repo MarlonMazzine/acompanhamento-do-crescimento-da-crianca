@@ -24,7 +24,7 @@ namespace WebApplication.TCC.AuthProvider
                 options.UseNpgsql(Configuration.GetConnectionString("AuthDB"));
             });
 
-            services.AddIdentity<Doctor, IdentityRole>(options =>
+            services.AddIdentity<IdentityUser, IdentityRole>(options =>
             {
                 options.Password.RequiredLength = 3;
                 options.Password.RequireNonAlphanumeric = false;

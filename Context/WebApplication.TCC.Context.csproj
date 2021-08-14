@@ -1,37 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="Migrations\20210813105141_Patient.cs" />
-    <Compile Remove="Migrations\20210813105141_Patient.Designer.cs" />
-    <Compile Remove="Migrations\20210813110846_Patient.cs" />
-    <Compile Remove="Migrations\20210813110846_Patient.Designer.cs" />
-    <Compile Remove="Migrations\20210813111008_Patient.cs" />
-    <Compile Remove="Migrations\20210813111008_Patient.Designer.cs" />
-    <Compile Remove="Migrations\20210813114209_Doctor-Patient.cs" />
-    <Compile Remove="Migrations\20210813114209_Doctor-Patient.Designer.cs" />
-    <Compile Remove="Migrations\20210813114459_Doctor-Patient.cs" />
-    <Compile Remove="Migrations\20210813114459_Doctor-Patient.Designer.cs" />
-    <Compile Remove="Migrations\20210813114604_Doctor-Patient.cs" />
-    <Compile Remove="Migrations\20210813114604_Doctor-Patient.Designer.cs" />
-    <Compile Remove="Migrations\20210813114646_Doctor-Patient.cs" />
-    <Compile Remove="Migrations\20210813114646_Doctor-Patient.Designer.cs" />
-    <Compile Remove="Migrations\20210813124618_DoctorPatient-Table.cs" />
-    <Compile Remove="Migrations\20210813124618_DoctorPatient-Table.Designer.cs" />
-    <Compile Remove="Migrations\20210813124758_DoctorPatient-Table.cs" />
-    <Compile Remove="Migrations\20210813124758_DoctorPatient-Table.Designer.cs" />
-    <Compile Remove="Migrations\20210813125308_DoctorPatient-Table.cs" />
-    <Compile Remove="Migrations\20210813125308_DoctorPatient-Table.Designer.cs" />
-    <Compile Remove="Migrations\20210813125552_DoctorPatient-Table.cs" />
-    <Compile Remove="Migrations\20210813125552_DoctorPatient-Table.Designer.cs" />
-    <Compile Remove="Migrations\20210813130530_DoctorPatient-Table.cs" />
-    <Compile Remove="Migrations\20210813130530_DoctorPatient-Table.Designer.cs" />
-    <Compile Remove="Migrations\20210813131112_DoctorPatient-Table.cs" />
-    <Compile Remove="Migrations\20210813131112_DoctorPatient-Table.Designer.cs" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
@@ -57,7 +28,7 @@
     <PackageReference Include="System.ComponentModel.Composition" Version="5.0.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.5.3" />
     <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="4.5.1" />
-    <PackageReference Include="System.Interactive.Async" Version="5.0.0" />
+    <PackageReference Include="System.Interactive.Async" Version="3.2.0" />
     <PackageReference Include="System.Linq" Version="4.3.0" />
     <PackageReference Include="System.Linq.Expressions" Version="4.3.0" />
     <PackageReference Include="System.Reflection" Version="4.3.0" />

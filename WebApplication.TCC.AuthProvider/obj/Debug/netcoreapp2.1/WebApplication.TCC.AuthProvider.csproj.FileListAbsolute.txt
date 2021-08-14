@@ -18,3 +18,5 @@ C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.Auth
 C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.AuthProvider\bin\Debug\netcoreapp2.1\WebApplication.TCC.Context.dll
 C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.AuthProvider\bin\Debug\netcoreapp2.1\WebApplication.TCC.Context.pdb
 C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.AuthProvider\obj\Debug\netcoreapp2.1\WebApplication.TCC.AuthProvider.csproj.CopyComplete
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.AuthProvider\bin\Debug\netcoreapp2.1\WebApplication.TCC.Seguranca.dll
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.AuthProvider\bin\Debug\netcoreapp2.1\WebApplication.TCC.Seguranca.pdb

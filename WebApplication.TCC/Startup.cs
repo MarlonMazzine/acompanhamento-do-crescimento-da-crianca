@@ -49,7 +49,8 @@ namespace WebApplication.TCC
                 };
             });
 
-            services.AddApiVersioning();
+            //services.AddApiVersioning();
+            services.AddMvc();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

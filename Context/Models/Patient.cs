@@ -8,7 +8,13 @@ namespace WebApplication.TCC.Context.Models
         public double Weight { get; set; }
         public double Height { get; set; }
         public DoctorPatient Doctor { get; set; }
-        public DateTime CreationDate { get; set; }
+
+        private DateTime creationDate;
+        public DateTime CreationDate
+        {
+            get { return creationDate; }
+            private set { creationDate = DateTime.Now; }
+        }
 
         public Patient()
         {

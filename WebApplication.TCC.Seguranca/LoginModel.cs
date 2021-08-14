@@ -1,15 +1,15 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Alura.ListaLeitura.Seguranca
+namespace Tcc.Atuhentication
 {
     public class LoginModel
     {
         [Required]
-        [Display(Name = "Usuário")]
+        [Display(Name = "User")]
         public string Login { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Senha")]
+        [Display(Name = "Password")]
         public string Password { get; set; }
     }
 }

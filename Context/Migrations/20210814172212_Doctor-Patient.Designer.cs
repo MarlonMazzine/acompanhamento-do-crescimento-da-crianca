@@ -10,24 +10,22 @@ using WebApplication.TCC.Context.Datas;
 namespace WebApplication.TCC.Context.Migrations
 {
     [DbContext(typeof(TccContext))]
-    [Migration("20210813114954_Doctor-Patient")]
+    [Migration("20210814172212_Doctor-Patient")]
     partial class DoctorPatient
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn)
-                .HasAnnotation("ProductVersion", "3.1.18")
+                .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
+                .HasAnnotation("ProductVersion", "2.1.14-servicing-32113")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             modelBuilder.Entity("WebApplication.TCC.Context.Models.Doctor", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("doctor_id")
-                        .HasColumnType("bigint")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                        .HasColumnName("doctor_id");
 
                     b.Property<string>("Document")
                         .IsRequired()
@@ -54,17 +52,40 @@ namespace WebApplication.TCC.Context.Migrations
                     b.ToTable("doctor");
                 });
 
+            modelBuilder.Entity("WebApplication.TCC.Context.Models.DoctorPatient", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("doctor_patient_id");
+
+                    b.Property<long>("PatientId")
+                        .HasColumnName("patient_id");
+
+                    b.Property<long>("doctor_id");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PatientId")
+                        .IsUnique();
+
+                    b.HasIndex("doctor_id");
+
+                    b.ToTable("doctor_patient");
+                });
+
             modelBuilder.Entity("WebApplication.TCC.Context.Models.Patient", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("patient_id")
-                        .HasColumnType("bigint")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                        .HasColumnName("patient_id");
 
                     b.Property<DateTime>("BirthDate")
                         .HasColumnName("birth_date")
-                        .HasColumnType("DATE");
+                        .HasColumnType("TIMESTAMP WITHOUT TIME ZONE");
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnName("creation_date")
+                        .HasColumnType("TIMESTAMP WITHOUT TIME ZONE");
 
                     b.Property<string>("Document")
                         .IsRequired()
@@ -77,6 +98,7 @@ namespace WebApplication.TCC.Context.Migrations
                         .HasColumnType("VARCHAR(255)");
 
                     b.Property<decimal>("Height")
+                        .HasConversion(new ValueConverter<decimal, decimal>(v => default(decimal), v => default(decimal), new ConverterMappingHints(precision: 38, scale: 17)))
                         .HasColumnName("height")
                         .HasColumnType("NUMERIC(2,2)");
 
@@ -86,12 +108,26 @@ namespace WebApplication.TCC.Context.Migrations
                         .HasColumnType("VARCHAR(255)");
 
                     b.Property<decimal>("Weight")
+                        .HasConversion(new ValueConverter<decimal, decimal>(v => default(decimal), v => default(decimal), new ConverterMappingHints(precision: 38, scale: 17)))
                         .HasColumnName("weight")
                         .HasColumnType("NUMERIC(3,3)");
 
                     b.HasKey("Id");
 
                     b.ToTable("patient");
+                });
+
+            modelBuilder.Entity("WebApplication.TCC.Context.Models.DoctorPatient", b =>
+                {
+                    b.HasOne("WebApplication.TCC.Context.Models.Patient", "Patient")
+                        .WithOne("Doctor")
+                        .HasForeignKey("WebApplication.TCC.Context.Models.DoctorPatient", "PatientId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("WebApplication.TCC.Context.Models.Doctor", "Doctor")
+                        .WithMany("Patients")
+                        .HasForeignKey("doctor_id")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

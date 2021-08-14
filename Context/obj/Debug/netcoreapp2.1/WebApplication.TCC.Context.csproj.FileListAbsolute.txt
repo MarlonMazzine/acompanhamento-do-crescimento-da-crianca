@@ -1,4 +1,3 @@
-C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\Context\obj\Debug\netcoreapp2.1\WebApplication.TCC.Context.csproj.AssemblyReference.cache
 C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\Context\obj\Debug\netcoreapp2.1\WebApplication.TCC.Context.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\Context\obj\Debug\netcoreapp2.1\WebApplication.TCC.Context.AssemblyInfoInputs.cache
 C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\Context\obj\Debug\netcoreapp2.1\WebApplication.TCC.Context.AssemblyInfo.cs

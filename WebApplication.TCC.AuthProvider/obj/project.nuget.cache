@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "42wJHIAlyXGeK+8+RfrUL8C7juoHdLzkzfZnrdRgbloCaYS506IsMg4r/MzW0N3ODO0UkKQ+lLP++vqN/fmrgw==",
+  "dgSpecHash": "I061OCyYRHYlRsbJMg2478GCTZlU4PrdNdcPV0kcMw9whjJPrEa1GiJJRkZB1M7XuyFY5VQQwmO8ppwPdoLgTw==",
   "success": true,
   "projectFilePath": "C:\\Users\\marlo\\Desktop\\TCC\\webservice\\WebApplication.TCC\\WebApplication.TCC.AuthProvider\\WebApplication.TCC.AuthProvider.csproj",
   "expectedPackageFiles": [
@@ -243,7 +243,7 @@
     "C:\\Users\\marlo\\.nuget\\packages\\system.reflection.typeextensions\\4.3.0\\system.reflection.typeextensions.4.3.0.nupkg.sha512",
     "C:\\Users\\marlo\\.nuget\\packages\\system.resources.resourcemanager\\4.3.0\\system.resources.resourcemanager.4.3.0.nupkg.sha512",
     "C:\\Users\\marlo\\.nuget\\packages\\system.runtime\\4.3.1\\system.runtime.4.3.1.nupkg.sha512",
-    "C:\\Users\\marlo\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
+    "C:\\Users\\marlo\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.3\\system.runtime.compilerservices.unsafe.4.5.3.nupkg.sha512",
     "C:\\Users\\marlo\\.nuget\\packages\\system.runtime.extensions\\4.3.1\\system.runtime.extensions.4.3.1.nupkg.sha512",
     "C:\\Users\\marlo\\.nuget\\packages\\system.runtime.handles\\4.3.0\\system.runtime.handles.4.3.0.nupkg.sha512",
     "C:\\Users\\marlo\\.nuget\\packages\\system.runtime.interopservices\\4.3.0\\system.runtime.interopservices.4.3.0.nupkg.sha512",

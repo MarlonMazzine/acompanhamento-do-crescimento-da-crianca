@@ -16,3 +16,6 @@ C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC\obj\
 C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC\obj\Debug\netcoreapp2.1\WebApplication.TCC.Api.dll
 C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC\obj\Debug\netcoreapp2.1\WebApplication.TCC.Api.pdb
 C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC\obj\Debug\netcoreapp2.1\WebApplication.TCC.Api.genruntimeconfig.cache
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC\bin\Debug\netcoreapp2.1\WebApplication.TCC.Context.dll
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC\bin\Debug\netcoreapp2.1\WebApplication.TCC.Context.pdb
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC\obj\Debug\netcoreapp2.1\WebApplication.TCC.Api.csproj.CopyComplete

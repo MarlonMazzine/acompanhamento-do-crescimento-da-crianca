@@ -10,4 +10,3 @@ C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\Context\bin\Debug\netco
 C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\Context\obj\Debug\netcoreapp2.1\WebApplication.TCC.Context.dll
 C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\Context\obj\Debug\netcoreapp2.1\WebApplication.TCC.Context.pdb
 C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\Context\obj\Debug\netcoreapp2.1\WebApplication.TCC.Context.genruntimeconfig.cache
-C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\Context\obj\Debug\netcoreapp2.1\WebApplication.TCC.Context.csproj.AssemblyReference.cache

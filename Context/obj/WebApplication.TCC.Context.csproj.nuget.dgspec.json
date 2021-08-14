@@ -125,7 +125,7 @@
             },
             "System.Data.SqlClient": {
               "target": "Package",
-              "version": "[4.8.2, )"
+              "version": "[4.5.3, )"
             },
             "System.Diagnostics.DiagnosticSource": {
               "target": "Package",

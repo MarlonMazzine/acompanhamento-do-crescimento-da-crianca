@@ -1,0 +1,17 @@
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.AuthProvider\obj\Debug\netcoreapp2.1\WebApplication.TCC.AuthProvider.csproj.AssemblyReference.cache
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.AuthProvider\obj\Debug\netcoreapp2.1\WebApplication.TCC.AuthProvider.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.AuthProvider\obj\Debug\netcoreapp2.1\WebApplication.TCC.AuthProvider.AssemblyInfoInputs.cache
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.AuthProvider\obj\Debug\netcoreapp2.1\WebApplication.TCC.AuthProvider.AssemblyInfo.cs
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.AuthProvider\obj\Debug\netcoreapp2.1\WebApplication.TCC.AuthProvider.csproj.CoreCompileInputs.cache
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.AuthProvider\obj\Debug\netcoreapp2.1\WebApplication.TCC.AuthProvider.RazorAssemblyInfo.cache
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.AuthProvider\obj\Debug\netcoreapp2.1\WebApplication.TCC.AuthProvider.RazorAssemblyInfo.cs
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.AuthProvider\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.AuthProvider\bin\Debug\netcoreapp2.1\WebApplication.TCC.AuthProvider.deps.json
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.AuthProvider\bin\Debug\netcoreapp2.1\WebApplication.TCC.AuthProvider.runtimeconfig.json
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.AuthProvider\bin\Debug\netcoreapp2.1\WebApplication.TCC.AuthProvider.runtimeconfig.dev.json
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.AuthProvider\bin\Debug\netcoreapp2.1\WebApplication.TCC.AuthProvider.dll
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.AuthProvider\bin\Debug\netcoreapp2.1\WebApplication.TCC.AuthProvider.pdb
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.AuthProvider\obj\Debug\netcoreapp2.1\WebApplication.TCC.AuthProvider.RazorTargetAssemblyInfo.cache
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.AuthProvider\obj\Debug\netcoreapp2.1\WebApplication.TCC.AuthProvider.dll
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.AuthProvider\obj\Debug\netcoreapp2.1\WebApplication.TCC.AuthProvider.pdb
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.AuthProvider\obj\Debug\netcoreapp2.1\WebApplication.TCC.AuthProvider.genruntimeconfig.cache

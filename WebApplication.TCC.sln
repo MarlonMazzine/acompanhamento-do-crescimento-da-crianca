@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication.TCC", "WebApplication.TCC\WebApplication.TCC.csproj", "{98579582-FCBC-416C-AB45-349F778E2201}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication.TCC.Api", "WebApplication.TCC\WebApplication.TCC.Api.csproj", "{98579582-FCBC-416C-AB45-349F778E2201}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication.TCC.AuthProvider", "WebApplication.TCC.AuthProvider\WebApplication.TCC.AuthProvider.csproj", "{C9CFDBE3-7524-4C5A-A1E9-B718F85F9848}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication.TCC.Seguranca", "WebApplication.TCC.Seguranca\WebApplication.TCC.Seguranca.csproj", "{6F96301C-2485-47D9-8EAB-195D2C45B312}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication.TCC.Context", "Context\WebApplication.TCC.Context.csproj", "{61A94A4B-44D7-4B80-BDAB-B18B15EB1C7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{98579582-FCBC-416C-AB45-349F778E2201}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98579582-FCBC-416C-AB45-349F778E2201}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98579582-FCBC-416C-AB45-349F778E2201}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9CFDBE3-7524-4C5A-A1E9-B718F85F9848}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9CFDBE3-7524-4C5A-A1E9-B718F85F9848}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9CFDBE3-7524-4C5A-A1E9-B718F85F9848}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9CFDBE3-7524-4C5A-A1E9-B718F85F9848}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F96301C-2485-47D9-8EAB-195D2C45B312}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F96301C-2485-47D9-8EAB-195D2C45B312}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F96301C-2485-47D9-8EAB-195D2C45B312}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F96301C-2485-47D9-8EAB-195D2C45B312}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61A94A4B-44D7-4B80-BDAB-B18B15EB1C7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61A94A4B-44D7-4B80-BDAB-B18B15EB1C7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61A94A4B-44D7-4B80-BDAB-B18B15EB1C7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61A94A4B-44D7-4B80-BDAB-B18B15EB1C7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

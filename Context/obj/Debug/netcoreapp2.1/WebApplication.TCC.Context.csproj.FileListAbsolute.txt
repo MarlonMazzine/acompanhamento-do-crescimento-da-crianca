@@ -1,0 +1,13 @@
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\Context\obj\Debug\netcoreapp2.1\WebApplication.TCC.Context.csproj.AssemblyReference.cache
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\Context\obj\Debug\netcoreapp2.1\WebApplication.TCC.Context.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\Context\obj\Debug\netcoreapp2.1\WebApplication.TCC.Context.AssemblyInfoInputs.cache
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\Context\obj\Debug\netcoreapp2.1\WebApplication.TCC.Context.AssemblyInfo.cs
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\Context\obj\Debug\netcoreapp2.1\WebApplication.TCC.Context.csproj.CoreCompileInputs.cache
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\Context\bin\Debug\netcoreapp2.1\WebApplication.TCC.Context.deps.json
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\Context\bin\Debug\netcoreapp2.1\WebApplication.TCC.Context.runtimeconfig.json
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\Context\bin\Debug\netcoreapp2.1\WebApplication.TCC.Context.runtimeconfig.dev.json
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\Context\bin\Debug\netcoreapp2.1\WebApplication.TCC.Context.dll
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\Context\bin\Debug\netcoreapp2.1\WebApplication.TCC.Context.pdb
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\Context\obj\Debug\netcoreapp2.1\WebApplication.TCC.Context.dll
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\Context\obj\Debug\netcoreapp2.1\WebApplication.TCC.Context.pdb
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\Context\obj\Debug\netcoreapp2.1\WebApplication.TCC.Context.genruntimeconfig.cache

@@ -1,3 +1,5 @@
 is_global = true
 build_property.RootNamespace = WebApplication.TCC
 build_property.ProjectDir = C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC\
+[*]
+guidelines = 120

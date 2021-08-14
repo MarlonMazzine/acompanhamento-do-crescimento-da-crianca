@@ -19,3 +19,10 @@ C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC\obj\
 C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC\bin\Debug\netcoreapp2.1\WebApplication.TCC.Context.dll
 C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC\bin\Debug\netcoreapp2.1\WebApplication.TCC.Context.pdb
 C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC\obj\Debug\netcoreapp2.1\WebApplication.TCC.Api.csproj.CopyComplete
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC\bin\Debug\netcoreapp2.1\WebApplication.TCC.AuthProvider.deps.json
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC\bin\Debug\netcoreapp2.1\WebApplication.TCC.AuthProvider.runtimeconfig.json
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC\bin\Debug\netcoreapp2.1\WebApplication.TCC.AuthProvider.runtimeconfig.dev.json
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC\bin\Debug\netcoreapp2.1\WebApplication.TCC.AuthProvider.dll
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC\bin\Debug\netcoreapp2.1\WebApplication.TCC.Seguranca.dll
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC\bin\Debug\netcoreapp2.1\WebApplication.TCC.AuthProvider.pdb
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC\bin\Debug\netcoreapp2.1\WebApplication.TCC.Seguranca.pdb

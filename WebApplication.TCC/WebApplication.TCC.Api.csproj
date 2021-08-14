@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Context\WebApplication.TCC.Context.csproj" />
+    <ProjectReference Include="..\WebApplication.TCC.AuthProvider\WebApplication.TCC.AuthProvider.csproj" />
   </ItemGroup>
 
 </Project>

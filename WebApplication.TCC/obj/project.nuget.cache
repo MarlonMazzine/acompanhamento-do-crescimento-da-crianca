@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "g/175Xw0ZTqMoEeOqFfhKWMum4sw59xifDa44VmcSzzKPomR7OLAEH5L+shNqL2ZgYJXBEHQ7BXxoJrSj5n6bQ==",
+  "dgSpecHash": "WeLIT+GqJZpBpzQPuo1VMM7o7dfeIZB/DeZt9pz/tqTelir/DURlZM0djFl9uke0SiR1Tv0y52RCe0BLBrW01w==",
   "success": true,
   "projectFilePath": "C:\\Users\\marlo\\Desktop\\TCC\\webservice\\WebApplication.TCC\\WebApplication.TCC\\WebApplication.TCC.Api.csproj",
   "expectedPackageFiles": [
@@ -216,7 +216,7 @@
     "C:\\Users\\marlo\\.nuget\\packages\\system.data.sqlclient\\4.5.3\\system.data.sqlclient.4.5.3.nupkg.sha512",
     "C:\\Users\\marlo\\.nuget\\packages\\system.diagnostics.contracts\\4.3.0\\system.diagnostics.contracts.4.3.0.nupkg.sha512",
     "C:\\Users\\marlo\\.nuget\\packages\\system.diagnostics.debug\\4.3.0\\system.diagnostics.debug.4.3.0.nupkg.sha512",
-    "C:\\Users\\marlo\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.1\\system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512",
+    "C:\\Users\\marlo\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.5.1\\system.diagnostics.diagnosticsource.4.5.1.nupkg.sha512",
     "C:\\Users\\marlo\\.nuget\\packages\\system.diagnostics.fileversioninfo\\4.3.0\\system.diagnostics.fileversioninfo.4.3.0.nupkg.sha512",
     "C:\\Users\\marlo\\.nuget\\packages\\system.diagnostics.stacktrace\\4.3.0\\system.diagnostics.stacktrace.4.3.0.nupkg.sha512",
     "C:\\Users\\marlo\\.nuget\\packages\\system.diagnostics.tools\\4.3.0\\system.diagnostics.tools.4.3.0.nupkg.sha512",
@@ -254,7 +254,7 @@
     "C:\\Users\\marlo\\.nuget\\packages\\system.reflection.typeextensions\\4.3.0\\system.reflection.typeextensions.4.3.0.nupkg.sha512",
     "C:\\Users\\marlo\\.nuget\\packages\\system.resources.resourcemanager\\4.3.0\\system.resources.resourcemanager.4.3.0.nupkg.sha512",
     "C:\\Users\\marlo\\.nuget\\packages\\system.runtime\\4.3.1\\system.runtime.4.3.1.nupkg.sha512",
-    "C:\\Users\\marlo\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
+    "C:\\Users\\marlo\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512",
     "C:\\Users\\marlo\\.nuget\\packages\\system.runtime.extensions\\4.3.1\\system.runtime.extensions.4.3.1.nupkg.sha512",
     "C:\\Users\\marlo\\.nuget\\packages\\system.runtime.handles\\4.3.0\\system.runtime.handles.4.3.0.nupkg.sha512",
     "C:\\Users\\marlo\\.nuget\\packages\\system.runtime.interopservices\\4.3.0\\system.runtime.interopservices.4.3.0.nupkg.sha512",

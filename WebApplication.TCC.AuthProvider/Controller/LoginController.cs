@@ -6,6 +6,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Tcc.Atuhentication;
+using WebApplication.TCC.Context.Models;
 
 namespace WebApplication.TCC.AuthProvider.Controller
 {
@@ -13,9 +14,9 @@ namespace WebApplication.TCC.AuthProvider.Controller
     [Route("api/[controller]")]
     public class LoginController : ControllerBase
     {
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly SignInManager<Doctor> _signInManager;
 
-        public LoginController(SignInManager<IdentityUser> signInManager)
+        public LoginController(SignInManager<Doctor> signInManager)
         {
             _signInManager = signInManager;
         }
@@ -28,26 +29,24 @@ namespace WebApplication.TCC.AuthProvider.Controller
                 var result = await _signInManager.PasswordSignInAsync(model.Login, model.Password, true, true);
                 if (result.Succeeded)
                 {
-                    //cria token (header + payload >> direitos + signature)
-                    var direitos = new[]
+                    var claims = new[]
                     {
                         new Claim(JwtRegisteredClaimNames.Sub, model.Login),
                         new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
                     };
 
-                    var chave = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("tcc-webapi-authentication-valid"));
-                    var credenciais = new SigningCredentials(chave, SecurityAlgorithms.HmacSha256);
+                    var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("tcc-webapi-authentication-valid"));
+                    var credencials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
                     var token = new JwtSecurityToken(
                         issuer: "Tcc.WebApp",
                         audience: "Insomnia",
-                        claims: direitos,
-                        signingCredentials: credenciais,
-                        expires: DateTime.Now.AddMinutes(30)
+                        claims: claims,
+                        signingCredentials: credencials,
+                        expires: DateTime.Now.AddDays(1)
                     );
 
-                    var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
-                    return Ok(tokenString);
+                    return Ok(new JwtSecurityTokenHandler().WriteToken(token));
                 }
                 return Unauthorized(); //401
             }

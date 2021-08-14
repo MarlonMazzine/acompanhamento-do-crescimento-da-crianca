@@ -4222,6 +4222,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
+          "Microsoft.AspNetCore.Identity": "2.1.1",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.1.1",
           "Microsoft.CSharp": "4.7.0",
           "Microsoft.EntityFrameworkCore": "2.1.1",
           "Microsoft.EntityFrameworkCore.Relational": "2.1.1",
@@ -11590,8 +11592,8 @@
     },
     "WebApplication.TCC.Context/1.0.0": {
       "type": "project",
-      "path": "../Context/WebApplication.TCC.Context.csproj",
-      "msbuildProject": "../Context/WebApplication.TCC.Context.csproj"
+      "path": "../WebApplication.TCC.Context/WebApplication.TCC.Context.csproj",
+      "msbuildProject": "../WebApplication.TCC.Context/WebApplication.TCC.Context.csproj"
     },
     "WebApplication.TCC.Seguranca/1.0.0": {
       "type": "project",
@@ -11638,8 +11640,8 @@
         "netcoreapp2.1": {
           "targetAlias": "netcoreapp2.1",
           "projectReferences": {
-            "C:\\Users\\marlo\\Desktop\\TCC\\webservice\\WebApplication.TCC\\Context\\WebApplication.TCC.Context.csproj": {
-              "projectPath": "C:\\Users\\marlo\\Desktop\\TCC\\webservice\\WebApplication.TCC\\Context\\WebApplication.TCC.Context.csproj"
+            "C:\\Users\\marlo\\Desktop\\TCC\\webservice\\WebApplication.TCC\\WebApplication.TCC.Context\\WebApplication.TCC.Context.csproj": {
+              "projectPath": "C:\\Users\\marlo\\Desktop\\TCC\\webservice\\WebApplication.TCC\\WebApplication.TCC.Context\\WebApplication.TCC.Context.csproj"
             },
             "C:\\Users\\marlo\\Desktop\\TCC\\webservice\\WebApplication.TCC\\WebApplication.TCC.Seguranca\\WebApplication.TCC.Seguranca.csproj": {
               "projectPath": "C:\\Users\\marlo\\Desktop\\TCC\\webservice\\WebApplication.TCC\\WebApplication.TCC.Seguranca\\WebApplication.TCC.Seguranca.csproj"

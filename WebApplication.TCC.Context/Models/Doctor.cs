@@ -6,8 +6,6 @@ namespace WebApplication.TCC.Context.Models
 {
     public class Doctor : IdentityUser
     {
-        [Key]
-        public long DoctorId { get; set; }
         public string Document { get; set; }
         public IList<DoctorPatient> Patients { get; set; }
 

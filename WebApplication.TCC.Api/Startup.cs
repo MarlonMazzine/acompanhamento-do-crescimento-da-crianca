@@ -1,12 +1,15 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System;
+using WebApplication.TCC.AuthProvider.Filters;
 using WebApplication.TCC.Context.Datas;
+using WebApplication.TCC.Context.Models;
 
 namespace WebApplication.TCC
 {
@@ -47,6 +50,19 @@ namespace WebApplication.TCC
                     ValidIssuer = "Tcc.WebApp",
                     ValidAudience = "Insomnia",
                 };
+            });
+
+            services.AddIdentity<Doctor, IdentityRole>(options =>
+            {
+                options.Password.RequiredLength = 3;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireLowercase = false;
+            }).AddEntityFrameworkStores<TccContext>();
+
+            services.AddMvc(options =>
+            {
+                options.Filters.Add(typeof(ErrorResponseFilter));
             });
 
             //services.AddApiVersioning();

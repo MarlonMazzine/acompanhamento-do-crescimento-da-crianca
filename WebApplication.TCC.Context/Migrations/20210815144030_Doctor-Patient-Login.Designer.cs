@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using WebApplication.TCC.Context.Datas;
@@ -9,9 +10,10 @@ using WebApplication.TCC.Context.Datas;
 namespace WebApplication.TCC.Context.Migrations
 {
     [DbContext(typeof(TccContext))]
-    partial class TccContextModelSnapshot : ModelSnapshot
+    [Migration("20210815144030_Doctor-Patient-Login")]
+    partial class DoctorPatientLogin
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

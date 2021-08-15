@@ -18,3 +18,5 @@ C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.Api\
 C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.Api\obj\Debug\netcoreapp2.1\WebApplication.TCC.Api.pdb
 C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.Api\obj\Debug\netcoreapp2.1\WebApplication.TCC.Api.genruntimeconfig.cache
 C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.Api\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.Api\bin\Debug\netcoreapp2.1\WebApplication.TCC.Seguranca.dll
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.Api\bin\Debug\netcoreapp2.1\WebApplication.TCC.Seguranca.pdb

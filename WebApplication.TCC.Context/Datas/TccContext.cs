@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using WebApplication.TCC.Context.Models;
 
 namespace WebApplication.TCC.Context.Datas
 {
-    public class TccContext : DbContext
+    public class TccContext : IdentityDbContext<Doctor>
     {
         public DbSet<Patient> Patients { get; set; }
         public DbSet<Doctor> Doctors { get; set; }
@@ -11,11 +12,12 @@ namespace WebApplication.TCC.Context.Datas
         public TccContext(DbContextOptions<TccContext> options)
             : base(options)
         {
-            this.Database.EnsureCreated();
+            base.Database.EnsureCreated();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfiguration(new PatientConfiguration());
             modelBuilder.ApplyConfiguration(new DoctorConfiguration());
             modelBuilder.ApplyConfiguration(new DoctorPatientConfiguration());

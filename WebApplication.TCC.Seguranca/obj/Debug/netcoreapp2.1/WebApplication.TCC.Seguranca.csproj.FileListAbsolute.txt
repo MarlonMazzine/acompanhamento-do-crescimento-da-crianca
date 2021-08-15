@@ -8,3 +8,6 @@ C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.Segu
 C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.Seguranca\obj\Debug\netcoreapp2.1\WebApplication.TCC.Seguranca.dll
 C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.Seguranca\obj\Debug\netcoreapp2.1\WebApplication.TCC.Seguranca.pdb
 C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.Seguranca\obj\Debug\netcoreapp2.1\WebApplication.TCC.Seguranca.csproj.AssemblyReference.cache
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.Seguranca\bin\Debug\netcoreapp2.1\WebApplication.TCC.Context.dll
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.Seguranca\bin\Debug\netcoreapp2.1\WebApplication.TCC.Context.pdb
+C:\Users\marlo\Desktop\TCC\webservice\WebApplication.TCC\WebApplication.TCC.Seguranca\obj\Debug\netcoreapp2.1\WebApplication.TCC.Seguranca.csproj.CopyComplete

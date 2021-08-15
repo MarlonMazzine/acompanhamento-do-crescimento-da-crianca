@@ -8,4 +8,8 @@
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.12.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WebApplication.TCC.Context\WebApplication.TCC.Context.csproj" />
+  </ItemGroup>
+
 </Project>

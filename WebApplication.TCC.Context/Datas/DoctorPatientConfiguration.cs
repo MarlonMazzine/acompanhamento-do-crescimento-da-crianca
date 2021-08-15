@@ -14,7 +14,7 @@ namespace WebApplication.TCC.Context.Datas
                 .Property(dp => dp.Id)
                 .HasColumnName("doctor_patient_id");
 
-            builder.Property<long>("doctor_id");
+            builder.Property<string>("doctor_id");
 
             builder
                 .Property(dp => dp.PatientId)

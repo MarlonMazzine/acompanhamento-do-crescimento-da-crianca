@@ -3,9 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace WebApplication.TCC.Context.Models
 {
-    public class Patient// : Person
+    public class Patient
     {
-        public long Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string Document { get; set; }

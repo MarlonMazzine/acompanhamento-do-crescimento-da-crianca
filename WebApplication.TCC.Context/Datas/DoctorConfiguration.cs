@@ -10,7 +10,7 @@ namespace WebApplication.TCC.Context.Datas
         {
             builder.HasData(new Doctor
             {
-                DoctorId = 123,
+                Id = "123",
                 UserName = "admin",
                 Email = "admin@example.org",
                 PasswordHash = "AQAAAAEAACcQAAAAED0tb8N23CW0B1uLCmdSzL1kfJKD1NqSU6VxzkJ/ATsHW8awVv+bBSmNiACpNR9Iqw==",
@@ -20,7 +20,7 @@ namespace WebApplication.TCC.Context.Datas
             builder.ToTable("doctor");
 
             builder
-                .Property(d => d.DoctorId)
+                .Property(d => d.Id)
                 .HasColumnName("doctor_id");
 
             builder

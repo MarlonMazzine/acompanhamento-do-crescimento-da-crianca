@@ -11,50 +11,53 @@ namespace WebApplication.TCC.Context.Datas
             builder.ToTable("patient");
 
             builder
-                .Property(c => c.Id)
+                .Property(p => p.Id)
                 .HasColumnName("patient_id");
 
             builder
-                .Property(c => c.BirthDate)
+                .Property(p => p.BirthDate)
                 .HasColumnName("birth_date")
                 .HasColumnType("TIMESTAMP WITHOUT TIME ZONE")
                 .IsRequired();
 
             builder
-                .Property(c => c.Height)
+                .Property(p => p.Height)
                 .HasColumnName("height")
                 .HasColumnType("NUMERIC(2,2)")
                 .IsRequired();
 
             builder
-                .Property(c => c.Weight)
+                .Property(p => p.Weight)
                 .HasColumnName("weight")
                 .HasColumnType("NUMERIC(3,3)")
                 .IsRequired();
 
             builder
-                .Property(c => c.CreationDate)
+                .Property(p => p.CreationDate)
                 .HasColumnName("creation_date")
                 .HasColumnType("TIMESTAMP WITHOUT TIME ZONE")
                 .IsRequired();
 
             builder
-                .Property(c => c.Name)
+                .Property(p => p.UserName)
                 .HasColumnName("name")
                 .HasColumnType("VARCHAR(255)")
                 .IsRequired();
 
             builder
-                .Property(c => c.Email)
+                .Property(p => p.Email)
                 .HasColumnName("email")
                 .HasColumnType("VARCHAR(255)")
                 .IsRequired();
 
             builder
-                .Property(c => c.Document)
+                .Property(p => p.Document)
                 .HasColumnName("document")
                 .HasColumnType("VARCHAR(50)")
                 .IsRequired();
+
+            builder.HasIndex(p => p.Document).IsUnique();
+            builder.HasIndex(p => p.Email).IsUnique();
         }
     }
 }

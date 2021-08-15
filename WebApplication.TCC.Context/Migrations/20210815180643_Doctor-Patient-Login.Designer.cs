@@ -10,7 +10,7 @@ using WebApplication.TCC.Context.Datas;
 namespace WebApplication.TCC.Context.Migrations
 {
     [DbContext(typeof(TccContext))]
-    [Migration("20210815144030_Doctor-Patient-Login")]
+    [Migration("20210815180643_Doctor-Patient-Login")]
     partial class DoctorPatientLogin
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -183,6 +183,9 @@ namespace WebApplication.TCC.Context.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Document")
+                        .IsUnique();
+
                     b.HasIndex("NormalizedEmail")
                         .HasName("EmailIndex");
 
@@ -191,10 +194,6 @@ namespace WebApplication.TCC.Context.Migrations
                         .HasName("UserNameIndex");
 
                     b.ToTable("doctor");
-
-                    b.HasData(
-                        new { Id = "123", AccessFailedCount = 0, ConcurrencyStamp = "49571ab6-366b-4423-bf25-63d460e5ebb5", Document = "12165466733", Email = "admin@example.org", EmailConfirmed = false, LockoutEnabled = false, PasswordHash = "AQAAAAEAACcQAAAAED0tb8N23CW0B1uLCmdSzL1kfJKD1NqSU6VxzkJ/ATsHW8awVv+bBSmNiACpNR9Iqw==", PhoneNumberConfirmed = false, TwoFactorEnabled = false, UserName = "admin" }
-                    );
                 });
 
             modelBuilder.Entity("WebApplication.TCC.Context.Models.DoctorPatient", b =>
@@ -224,9 +223,13 @@ namespace WebApplication.TCC.Context.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnName("patient_id");
 
+                    b.Property<int>("AccessFailedCount");
+
                     b.Property<DateTime>("BirthDate")
                         .HasColumnName("birth_date")
                         .HasColumnType("TIMESTAMP WITHOUT TIME ZONE");
+
+                    b.Property<string>("ConcurrencyStamp");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnName("creation_date")
@@ -242,12 +245,32 @@ namespace WebApplication.TCC.Context.Migrations
                         .HasColumnName("email")
                         .HasColumnType("VARCHAR(255)");
 
+                    b.Property<bool>("EmailConfirmed");
+
                     b.Property<decimal>("Height")
                         .HasConversion(new ValueConverter<decimal, decimal>(v => default(decimal), v => default(decimal), new ConverterMappingHints(precision: 38, scale: 17)))
                         .HasColumnName("height")
                         .HasColumnType("NUMERIC(2,2)");
 
-                    b.Property<string>("Name")
+                    b.Property<bool>("LockoutEnabled");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd");
+
+                    b.Property<string>("NormalizedEmail");
+
+                    b.Property<string>("NormalizedUserName");
+
+                    b.Property<string>("PasswordHash");
+
+                    b.Property<string>("PhoneNumber");
+
+                    b.Property<bool>("PhoneNumberConfirmed");
+
+                    b.Property<string>("SecurityStamp");
+
+                    b.Property<bool>("TwoFactorEnabled");
+
+                    b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnName("name")
                         .HasColumnType("VARCHAR(255)");
@@ -258,6 +281,12 @@ namespace WebApplication.TCC.Context.Migrations
                         .HasColumnType("NUMERIC(3,3)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Document")
+                        .IsUnique();
+
+                    b.HasIndex("Email")
+                        .IsUnique();
 
                     b.ToTable("patient");
                 });

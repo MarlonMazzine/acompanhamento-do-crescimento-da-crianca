@@ -8,15 +8,6 @@ namespace WebApplication.TCC.Context.Datas
     {
         public void Configure(EntityTypeBuilder<Doctor> builder)
         {
-            builder.HasData(new Doctor
-            {
-                Id = "123",
-                UserName = "admin",
-                Email = "admin@example.org",
-                PasswordHash = "AQAAAAEAACcQAAAAED0tb8N23CW0B1uLCmdSzL1kfJKD1NqSU6VxzkJ/ATsHW8awVv+bBSmNiACpNR9Iqw==",
-                Document = "12165466733",
-            });
-
             builder.ToTable("doctor");
 
             builder
@@ -46,6 +37,9 @@ namespace WebApplication.TCC.Context.Datas
                 .HasColumnName("document")
                 .HasColumnType("VARCHAR(50)")
                 .IsRequired();
+
+            builder.HasIndex(d => d.Document).IsUnique();
+            builder.HasIndex(d => d.Email).IsUnique();
         }
     }
 }

@@ -18,6 +18,11 @@ namespace WebApplication.TCC.Context.Datas
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Doctor>()
+                .HasIndex(b => b.Document)
+                .IsUnique();
+
             modelBuilder.ApplyConfiguration(new PatientConfiguration());
             modelBuilder.ApplyConfiguration(new DoctorConfiguration());
             modelBuilder.ApplyConfiguration(new DoctorPatientConfiguration());

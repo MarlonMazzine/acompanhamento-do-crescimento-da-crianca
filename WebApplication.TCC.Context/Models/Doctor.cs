@@ -6,6 +6,7 @@ namespace WebApplication.TCC.Context.Models
 {
     public class Doctor : IdentityUser
     {
+        [Required(ErrorMessage = "Document is required.")]
         public string Document { get; set; }
         public IList<DoctorPatient> Patients { get; set; }
 

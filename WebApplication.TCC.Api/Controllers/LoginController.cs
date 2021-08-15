@@ -6,13 +6,14 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Tcc.Atuhentication;
+using WebApplication.TCC.AuthProvider.Models;
 using WebApplication.TCC.Context.Models;
 using SignInResult = Microsoft.AspNetCore.Identity.SignInResult;
 
 namespace WebApplication.TCC.AuthProvider.Controller
 {
     [ApiController]
-    [Route("api/v1/[controller]")]
+    [Route("api/v1.0/[controller]")]
     public class LoginController : ControllerBase
     {
         private readonly SignInManager<Doctor> _signInManager;
@@ -27,19 +28,19 @@ namespace WebApplication.TCC.AuthProvider.Controller
         {
             if (ModelState.IsValid)
             {
-                SignInResult result = await _signInManager.PasswordSignInAsync(model.Login, model.Password, false, false);
+                SignInResult result = await _signInManager.PasswordSignInAsync(model.Login, model.Password, true, true);
 
                 if (result.Succeeded)
                 {
                     JwtSecurityToken token = this.MountToken(model);
 
-                    return Ok(new JwtSecurityTokenHandler().WriteToken(token));
+                    return Ok($"Bearer {new JwtSecurityTokenHandler().WriteToken(token)}");
                 }
 
                 return Unauthorized(); //401
             }
 
-            return BadRequest(); //400
+            return BadRequest(ErrorResponse.FromModelState(ModelState)); //400
         }
 
         private JwtSecurityToken MountToken(LoginModel model)

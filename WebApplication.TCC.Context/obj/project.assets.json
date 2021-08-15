@@ -4713,6 +4713,7 @@
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 2.1.1",
       "Microsoft.CSharp >= 4.7.0",
       "Microsoft.EntityFrameworkCore >= 2.1.1",
+      "Microsoft.EntityFrameworkCore.Abstractions >= 2.1.1",
       "Microsoft.EntityFrameworkCore.Design >= 2.1.1",
       "Microsoft.EntityFrameworkCore.Relational >= 2.1.1",
       "Microsoft.Extensions.Caching.Abstractions >= 2.1.1",
@@ -4797,6 +4798,10 @@
             "version": "[4.7.0, )"
           },
           "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[2.1.1, )"
+          },
+          "Microsoft.EntityFrameworkCore.Abstractions": {
             "target": "Package",
             "version": "[2.1.1, )"
           },

@@ -54,11 +54,23 @@ namespace WebApplication.TCC.Context.Migrations
                 {
                     patient_id = table.Column<string>(nullable: false),
                     name = table.Column<string>(type: "VARCHAR(255)", nullable: false),
+                    NormalizedUserName = table.Column<string>(nullable: true),
                     email = table.Column<string>(type: "VARCHAR(255)", nullable: false),
+                    NormalizedEmail = table.Column<string>(nullable: true),
+                    EmailConfirmed = table.Column<bool>(nullable: false),
+                    PasswordHash = table.Column<string>(nullable: true),
+                    SecurityStamp = table.Column<string>(nullable: true),
+                    ConcurrencyStamp = table.Column<string>(nullable: true),
+                    PhoneNumber = table.Column<string>(nullable: true),
+                    PhoneNumberConfirmed = table.Column<bool>(nullable: false),
+                    TwoFactorEnabled = table.Column<bool>(nullable: false),
+                    LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
+                    LockoutEnabled = table.Column<bool>(nullable: false),
+                    AccessFailedCount = table.Column<int>(nullable: false),
                     document = table.Column<string>(type: "VARCHAR(50)", nullable: false),
-                    birth_date = table.Column<DateTime>(type: "TIMESTAMP WITHOUT TIME ZONE", nullable: false),
                     weight = table.Column<decimal>(type: "NUMERIC(3,3)", nullable: false),
                     height = table.Column<decimal>(type: "NUMERIC(2,2)", nullable: false),
+                    birth_date = table.Column<DateTime>(type: "TIMESTAMP WITHOUT TIME ZONE", nullable: false),
                     creation_date = table.Column<DateTime>(type: "TIMESTAMP WITHOUT TIME ZONE", nullable: false)
                 },
                 constraints: table =>
@@ -197,11 +209,6 @@ namespace WebApplication.TCC.Context.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
-            migrationBuilder.InsertData(
-                table: "doctor",
-                columns: new[] { "doctor_id", "AccessFailedCount", "ConcurrencyStamp", "document", "email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "password", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "name" },
-                values: new object[] { "123", 0, "49571ab6-366b-4423-bf25-63d460e5ebb5", "12165466733", "admin@example.org", false, false, null, null, null, "AQAAAAEAACcQAAAAED0tb8N23CW0B1uLCmdSzL1kfJKD1NqSU6VxzkJ/ATsHW8awVv+bBSmNiACpNR9Iqw==", null, false, null, false, "admin" });
-
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -229,6 +236,12 @@ namespace WebApplication.TCC.Context.Migrations
                 column: "RoleId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_doctor_document",
+                table: "doctor",
+                column: "document",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "EmailIndex",
                 table: "doctor",
                 column: "NormalizedEmail");
@@ -249,6 +262,18 @@ namespace WebApplication.TCC.Context.Migrations
                 name: "IX_doctor_patient_doctor_id",
                 table: "doctor_patient",
                 column: "doctor_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_patient_document",
+                table: "patient",
+                column: "document",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_patient_email",
+                table: "patient",
+                column: "email",
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

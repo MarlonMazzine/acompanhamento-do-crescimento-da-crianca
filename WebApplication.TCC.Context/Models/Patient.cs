@@ -1,17 +1,17 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace WebApplication.TCC.Context.Models
 {
-    public class Patient
+    public class Patient : IdentityUser
     {
-        public string Id { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
+        [Required(ErrorMessage = "Document is required.")]
         public string Document { get; set; }
-        public DateTime BirthDate { get; set; }
         public double Weight { get; set; }
         public double Height { get; set; }
+
+        public DateTime BirthDate { get; set; }
         public DoctorPatient Doctor { get; set; }
 
         private DateTime creationDate;

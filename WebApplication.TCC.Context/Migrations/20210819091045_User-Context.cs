@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace WebApplication.TCC.Context.Migrations
 {
-    public partial class DoctorPatientLogin : Migration
+    public partial class UserContext : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -68,14 +68,28 @@ namespace WebApplication.TCC.Context.Migrations
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
                     document = table.Column<string>(type: "VARCHAR(50)", nullable: false),
-                    weight = table.Column<decimal>(type: "NUMERIC(3,3)", nullable: false),
-                    height = table.Column<decimal>(type: "NUMERIC(2,2)", nullable: false),
                     birth_date = table.Column<DateTime>(type: "TIMESTAMP WITHOUT TIME ZONE", nullable: false),
+                    gender = table.Column<string>(type: "VARCHAR(6)", nullable: false),
+                    doctor_id = table.Column<string>(type: "TEXT", nullable: false),
                     creation_date = table.Column<DateTime>(type: "TIMESTAMP WITHOUT TIME ZONE", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_patient", x => x.patient_id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "patient_height_weight",
+                columns: table => new
+                {
+                    height_weight_id = table.Column<decimal>(nullable: false),
+                    weight = table.Column<decimal>(type: "NUMERIC", nullable: false),
+                    height = table.Column<decimal>(type: "NUMERIC", nullable: false),
+                    patient_id = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_patient_height_weight", x => x.height_weight_id);
                 });
 
             migrationBuilder.CreateTable(
@@ -184,31 +198,6 @@ namespace WebApplication.TCC.Context.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "doctor_patient",
-                columns: table => new
-                {
-                    doctor_patient_id = table.Column<string>(nullable: false),
-                    doctor_id = table.Column<string>(nullable: true),
-                    patient_id = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_doctor_patient", x => x.doctor_patient_id);
-                    table.ForeignKey(
-                        name: "FK_doctor_patient_patient_patient_id",
-                        column: x => x.patient_id,
-                        principalTable: "patient",
-                        principalColumn: "patient_id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_doctor_patient_doctor_doctor_id",
-                        column: x => x.doctor_id,
-                        principalTable: "doctor",
-                        principalColumn: "doctor_id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -242,6 +231,12 @@ namespace WebApplication.TCC.Context.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_doctor_email",
+                table: "doctor",
+                column: "email",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "EmailIndex",
                 table: "doctor",
                 column: "NormalizedEmail");
@@ -251,17 +246,6 @@ namespace WebApplication.TCC.Context.Migrations
                 table: "doctor",
                 column: "NormalizedUserName",
                 unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_doctor_patient_patient_id",
-                table: "doctor_patient",
-                column: "patient_id",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_doctor_patient_doctor_id",
-                table: "doctor_patient",
-                column: "doctor_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_patient_document",
@@ -294,13 +278,13 @@ namespace WebApplication.TCC.Context.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "doctor_patient");
+                name: "patient");
+
+            migrationBuilder.DropTable(
+                name: "patient_height_weight");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
-
-            migrationBuilder.DropTable(
-                name: "patient");
 
             migrationBuilder.DropTable(
                 name: "doctor");

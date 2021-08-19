@@ -33,7 +33,7 @@ namespace WebApplication.TCC.Api.Controllers
                     UserName = doctor.UserName,
                     Document = doctor.Document,
                     Email = doctor.Email,
-                    Patients = doctor.Patients,
+                    //Patients = doctor.Patients,
                     ConcurrencyStamp = null
                 });
             }

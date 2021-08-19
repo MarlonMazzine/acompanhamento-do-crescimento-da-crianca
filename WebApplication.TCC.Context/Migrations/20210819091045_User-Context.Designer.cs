@@ -2,16 +2,18 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using WebApplication.TCC.Context.Datas;
 
 namespace WebApplication.TCC.Context.Migrations
 {
-    [DbContext(typeof(TccContext))]
-    partial class TccContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(UserContext))]
+    [Migration("20210819091045_User-Context")]
+    partial class UserContext
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -197,25 +199,28 @@ namespace WebApplication.TCC.Context.Migrations
                     b.ToTable("doctor");
                 });
 
-            modelBuilder.Entity("WebApplication.TCC.Context.Models.DoctorPatient", b =>
+            modelBuilder.Entity("WebApplication.TCC.Context.Models.HeightWeight", b =>
                 {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("doctor_patient_id");
+                    b.Property<decimal>("Id")
+                        .HasColumnName("height_weight_id");
+
+                    b.Property<decimal>("Height")
+                        .HasColumnName("height")
+                        .HasColumnType("NUMERIC");
 
                     b.Property<string>("PatientId")
-                        .HasColumnName("patient_id");
+                        .IsRequired()
+                        .HasConversion(new ValueConverter<string, string>(v => default(string), v => default(string), new ConverterMappingHints(size: 64)))
+                        .HasColumnName("patient_id")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("doctor_id");
+                    b.Property<decimal>("Weight")
+                        .HasColumnName("weight")
+                        .HasColumnType("NUMERIC");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PatientId")
-                        .IsUnique();
-
-                    b.HasIndex("doctor_id");
-
-                    b.ToTable("doctor_patient");
+                    b.ToTable("patient_height_weight");
                 });
 
             modelBuilder.Entity("WebApplication.TCC.Context.Models.Patient", b =>
@@ -226,7 +231,7 @@ namespace WebApplication.TCC.Context.Migrations
 
                     b.Property<int>("AccessFailedCount");
 
-                    b.Property<DateTime>("BirthDate")
+                    b.Property<DateTime>("Birthdate")
                         .HasColumnName("birth_date")
                         .HasColumnType("TIMESTAMP WITHOUT TIME ZONE");
 
@@ -235,6 +240,11 @@ namespace WebApplication.TCC.Context.Migrations
                     b.Property<DateTime>("CreationDate")
                         .HasColumnName("creation_date")
                         .HasColumnType("TIMESTAMP WITHOUT TIME ZONE");
+
+                    b.Property<string>("DoctorId")
+                        .IsRequired()
+                        .HasColumnName("doctor_id")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Document")
                         .IsRequired()
@@ -248,10 +258,10 @@ namespace WebApplication.TCC.Context.Migrations
 
                     b.Property<bool>("EmailConfirmed");
 
-                    b.Property<decimal>("Height")
-                        .HasConversion(new ValueConverter<decimal, decimal>(v => default(decimal), v => default(decimal), new ConverterMappingHints(precision: 38, scale: 17)))
-                        .HasColumnName("height")
-                        .HasColumnType("NUMERIC(2,2)");
+                    b.Property<string>("Gender")
+                        .IsRequired()
+                        .HasColumnName("gender")
+                        .HasColumnType("VARCHAR(6)");
 
                     b.Property<bool>("LockoutEnabled");
 
@@ -275,11 +285,6 @@ namespace WebApplication.TCC.Context.Migrations
                         .IsRequired()
                         .HasColumnName("name")
                         .HasColumnType("VARCHAR(255)");
-
-                    b.Property<decimal>("Weight")
-                        .HasConversion(new ValueConverter<decimal, decimal>(v => default(decimal), v => default(decimal), new ConverterMappingHints(precision: 38, scale: 17)))
-                        .HasColumnName("weight")
-                        .HasColumnType("NUMERIC(3,3)");
 
                     b.HasKey("Id");
 
@@ -335,17 +340,6 @@ namespace WebApplication.TCC.Context.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("WebApplication.TCC.Context.Models.DoctorPatient", b =>
-                {
-                    b.HasOne("WebApplication.TCC.Context.Models.Patient", "Patient")
-                        .WithOne("Doctor")
-                        .HasForeignKey("WebApplication.TCC.Context.Models.DoctorPatient", "PatientId");
-
-                    b.HasOne("WebApplication.TCC.Context.Models.Doctor", "Doctor")
-                        .WithMany("Patients")
-                        .HasForeignKey("doctor_id");
                 });
 #pragma warning restore 612, 618
         }

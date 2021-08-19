@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using WebApplication.TCC.AuthProvider.Models;
+using WebApplication.TCC.Api.Models;
 
-namespace WebApplication.TCC.AuthProvider.Filters
+namespace WebApplication.TCC.Api.Filters
 {
     public class ErrorResponseFilter : IExceptionFilter
     {

@@ -8,7 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System;
-using WebApplication.TCC.AuthProvider.Filters;
+using WebApplication.TCC.Api.Filters;
 using WebApplication.TCC.Context.Datas;
 using WebApplication.TCC.Context.Models;
 
@@ -26,8 +26,6 @@ namespace WebApplication.TCC
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IRepository<Doctor>, BaseRepository<Doctor>>();
-
             services.AddCors(options =>
             {
                 options.AddPolicy(MyAllowSpecificOrigins,
@@ -39,7 +37,8 @@ namespace WebApplication.TCC
                 });
             });
 
-            services.AddDbContext<TccContext>(options => {
+            services.AddDbContext<UserContext>(options =>
+            {
                 options.UseNpgsql(Configuration.GetConnectionString("AuthDB"));
             });
 
@@ -67,6 +66,9 @@ namespace WebApplication.TCC
                 };
             });
 
+            services.AddScoped<IRepository<IdentityUser>, BaseRepository<IdentityUser>>();
+            services.AddScoped<IRepository<Patient>, BaseRepository<Patient>>();
+
             services.AddIdentity<Doctor, IdentityRole>(options =>
             {
                 options.Password.RequiredLength = 8;
@@ -74,7 +76,7 @@ namespace WebApplication.TCC
                 options.Password.RequireUppercase = false;
                 options.Password.RequireLowercase = false;
                 options.User.RequireUniqueEmail = true;
-            }).AddEntityFrameworkStores<TccContext>();
+            }).AddEntityFrameworkStores<UserContext>();
 
             services.AddMvc(options =>
             {

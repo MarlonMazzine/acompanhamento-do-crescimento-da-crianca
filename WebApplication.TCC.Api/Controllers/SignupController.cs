@@ -2,11 +2,11 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
-using WebApplication.TCC.AuthProvider.Models;
+using WebApplication.TCC.Api.Models;
 using WebApplication.TCC.Context.Models;
 using WebApplication.TCC.Seguranca;
 
-namespace WebApplication.TCC.AuthProvider.Controller
+namespace WebApplication.TCC.Api.Controller
 {
     [ApiController]
     [Route("api/v1.0/[controller]")]
@@ -45,7 +45,6 @@ namespace WebApplication.TCC.AuthProvider.Controller
                                 userName = user.UserName,
                                 document = user.Document,
                                 email = user.Email,
-                                patients = user.Patients
                             }
                         }
                     );
@@ -53,7 +52,6 @@ namespace WebApplication.TCC.AuthProvider.Controller
 
                 foreach (var error in result.Errors)
                 {
-                    //return BadRequest(error.Description);
                     ModelState.AddModelError(error.Code, error.Description);
                 }
             }

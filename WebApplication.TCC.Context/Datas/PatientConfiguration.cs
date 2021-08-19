@@ -15,21 +15,9 @@ namespace WebApplication.TCC.Context.Datas
                 .HasColumnName("patient_id");
 
             builder
-                .Property(p => p.BirthDate)
+                .Property(p => p.Birthdate)
                 .HasColumnName("birth_date")
                 .HasColumnType("TIMESTAMP WITHOUT TIME ZONE")
-                .IsRequired();
-
-            builder
-                .Property(p => p.Height)
-                .HasColumnName("height")
-                .HasColumnType("NUMERIC(2,2)")
-                .IsRequired();
-
-            builder
-                .Property(p => p.Weight)
-                .HasColumnName("weight")
-                .HasColumnType("NUMERIC(3,3)")
                 .IsRequired();
 
             builder
@@ -54,6 +42,18 @@ namespace WebApplication.TCC.Context.Datas
                 .Property(p => p.Document)
                 .HasColumnName("document")
                 .HasColumnType("VARCHAR(50)")
+                .IsRequired();
+
+            builder
+                .Property(p => p.DoctorId)
+                .HasColumnName("doctor_id")
+                .HasColumnType("TEXT")
+                .IsRequired();
+
+            builder
+                .Property(p => p.Gender)
+                .HasColumnName("gender")
+                .HasColumnType("VARCHAR(6)")
                 .IsRequired();
 
             builder.HasIndex(p => p.Document).IsUnique();

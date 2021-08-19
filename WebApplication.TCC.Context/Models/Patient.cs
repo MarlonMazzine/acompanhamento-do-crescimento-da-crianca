@@ -8,22 +8,15 @@ namespace WebApplication.TCC.Context.Models
     {
         [Required(ErrorMessage = "Document is required.")]
         public string Document { get; set; }
-        public double Weight { get; set; }
-        public double Height { get; set; }
-
-        public DateTime BirthDate { get; set; }
-        public DoctorPatient Doctor { get; set; }
+        public DateTime Birthdate { get; set; }
+        public string Gender { get; set; }
+        public string DoctorId { get; set; }
 
         private DateTime creationDate;
         public DateTime CreationDate
         {
-            get { return creationDate; }
-            private set { creationDate = DateTime.Now; }
-        }
-
-        public Patient()
-        {
-            Doctor = new DoctorPatient();
+            get { return DateTime.Now; }
+            private set { creationDate = value; }
         }
     }
 }

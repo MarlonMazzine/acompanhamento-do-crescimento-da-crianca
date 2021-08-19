@@ -8,11 +8,5 @@ namespace WebApplication.TCC.Context.Models
     {
         [Required(ErrorMessage = "Document is required.")]
         public string Document { get; set; }
-        public IList<DoctorPatient> Patients { get; set; }
-
-        public Doctor()
-        {
-            Patients = new List<DoctorPatient>();
-        }
     }
 }

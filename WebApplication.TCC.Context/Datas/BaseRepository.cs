@@ -4,9 +4,9 @@ namespace WebApplication.TCC.Context.Datas
 {
     public class BaseRepository<T>: IRepository<T> where T: class
     {
-        private readonly TccContext _context;
+        private readonly UserContext _context;
 
-        public BaseRepository(TccContext context)
+        public BaseRepository(UserContext context)
         {
             _context = context;
         }
@@ -25,7 +25,7 @@ namespace WebApplication.TCC.Context.Datas
             _context.SaveChanges();
         }
 
-        public T Find(int key)
+        public T Find(string key)
         {
             return _context.Find<T>(key);
         }

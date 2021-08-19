@@ -2,7 +2,7 @@
 using System;
 using System.Linq;
 
-namespace WebApplication.TCC.AuthProvider.Models
+namespace WebApplication.TCC.Api.Models
 {
     public class ErrorResponse
     {

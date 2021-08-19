@@ -3,17 +3,19 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Tcc.Atuhentication;
-using WebApplication.TCC.AuthProvider.Models;
+using WebApplication.TCC.Api.Models;
 using WebApplication.TCC.Context.Models;
 using SignInResult = Microsoft.AspNetCore.Identity.SignInResult;
 
-namespace WebApplication.TCC.AuthProvider.Controller
+namespace WebApplication.TCC.Api.Controller
 {
     [ApiController]
     [Route("api/v1.0/[controller]")]
+    [Produces("application/json")]
     public class LoginController : ControllerBase
     {
         private readonly SignInManager<Doctor> _signInManager;
@@ -28,13 +30,11 @@ namespace WebApplication.TCC.AuthProvider.Controller
         {
             if (ModelState.IsValid)
             {
-                SignInResult result = await _signInManager.PasswordSignInAsync(model.Login, model.Password, true, true);
+                SignInResult result = await _signInManager.PasswordSignInAsync(model.Login, model.Password, false, false);
 
                 if (result.Succeeded)
                 {
-                    JwtSecurityToken token = this.MountToken(model);
-
-                    return Ok($"Bearer {new JwtSecurityTokenHandler().WriteToken(token)}");
+                    return Ok(DoctorLoggedObject(model));
                 }
 
                 return Unauthorized(); //401
@@ -43,7 +43,25 @@ namespace WebApplication.TCC.AuthProvider.Controller
             return BadRequest(ErrorResponse.FromModelState(ModelState)); //400
         }
 
-        private JwtSecurityToken MountToken(LoginModel model)
+        private object DoctorLoggedObject(LoginModel model)
+        {
+            string token = this.MountToken(model);
+            Doctor user = _signInManager.UserManager.Users.ToList().Where(u => u.UserName == model.Login).First();
+
+            return new
+            {
+                token = $"Bearer {token}",
+                doctor = new
+                {
+                    id = user.Id,
+                    userName = user.UserName,
+                    document = user.Document,
+                    email = user.Email,
+                }
+            };
+        }
+
+        private string MountToken(LoginModel model)
         {
             Claim[] claims = new[]
             {
@@ -53,14 +71,15 @@ namespace WebApplication.TCC.AuthProvider.Controller
 
             SymmetricSecurityKey key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("tcc-webapi-authentication-valid"));
             SigningCredentials credencials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-            return new JwtSecurityToken(
+            JwtSecurityToken token = new JwtSecurityToken(
                 issuer: "Tcc.WebApp",
                 audience: "Insomnia",
                 claims: claims,
                 signingCredentials: credencials,
                 expires: DateTime.Now.AddDays(1)
             );
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
         }
     }
 }

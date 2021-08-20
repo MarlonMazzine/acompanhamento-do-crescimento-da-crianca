@@ -10,7 +10,7 @@ using WebApplication.TCC.Context.Datas;
 namespace WebApplication.TCC.Context.Migrations
 {
     [DbContext(typeof(UserContext))]
-    [Migration("20210819091045_User-Context")]
+    [Migration("20210819225109_User-Context")]
     partial class UserContext
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -201,7 +201,8 @@ namespace WebApplication.TCC.Context.Migrations
 
             modelBuilder.Entity("WebApplication.TCC.Context.Models.HeightWeight", b =>
                 {
-                    b.Property<decimal>("Id")
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnName("height_weight_id");
 
                     b.Property<decimal>("Height")
@@ -210,7 +211,6 @@ namespace WebApplication.TCC.Context.Migrations
 
                     b.Property<string>("PatientId")
                         .IsRequired()
-                        .HasConversion(new ValueConverter<string, string>(v => default(string), v => default(string), new ConverterMappingHints(size: 64)))
                         .HasColumnName("patient_id")
                         .HasColumnType("TEXT");
 

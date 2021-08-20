@@ -68,6 +68,7 @@ namespace WebApplication.TCC
 
             services.AddScoped<IRepository<IdentityUser>, BaseRepository<IdentityUser>>();
             services.AddScoped<IRepository<Patient>, BaseRepository<Patient>>();
+            services.AddScoped<IRepository<HeightWeight>, BaseRepository<HeightWeight>>();
 
             services.AddIdentity<Doctor, IdentityRole>(options =>
             {

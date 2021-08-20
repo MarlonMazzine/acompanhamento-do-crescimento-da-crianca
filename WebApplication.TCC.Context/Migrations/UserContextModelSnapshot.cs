@@ -199,7 +199,8 @@ namespace WebApplication.TCC.Context.Migrations
 
             modelBuilder.Entity("WebApplication.TCC.Context.Models.HeightWeight", b =>
                 {
-                    b.Property<decimal>("Id")
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnName("height_weight_id");
 
                     b.Property<decimal>("Height")
@@ -208,7 +209,6 @@ namespace WebApplication.TCC.Context.Migrations
 
                     b.Property<string>("PatientId")
                         .IsRequired()
-                        .HasConversion(new ValueConverter<string, string>(v => default(string), v => default(string), new ConverterMappingHints(size: 64)))
                         .HasColumnName("patient_id")
                         .HasColumnType("TEXT");
 

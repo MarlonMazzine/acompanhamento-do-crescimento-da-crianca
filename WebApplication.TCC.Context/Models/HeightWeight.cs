@@ -2,9 +2,9 @@
 {
     public class HeightWeight
     {
-        public decimal Id { get; set; }
+        public string Id { get; set; }
         public decimal Weight { get; set; }
         public decimal Height { get; set; }
-        public decimal PatientId { get; set; }
+        public string PatientId { get; set; }
     }
 }

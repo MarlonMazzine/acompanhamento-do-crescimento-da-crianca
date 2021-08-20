@@ -82,7 +82,7 @@ namespace WebApplication.TCC.Context.Migrations
                 name: "patient_height_weight",
                 columns: table => new
                 {
-                    height_weight_id = table.Column<decimal>(nullable: false),
+                    height_weight_id = table.Column<string>(nullable: false),
                     weight = table.Column<decimal>(type: "NUMERIC", nullable: false),
                     height = table.Column<decimal>(type: "NUMERIC", nullable: false),
                     patient_id = table.Column<string>(type: "TEXT", nullable: false)

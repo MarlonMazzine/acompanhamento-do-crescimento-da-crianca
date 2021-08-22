@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using WebApplication.TCC.Api.Validators;
 using WebApplication.TCC.Context.Datas;
@@ -29,7 +32,7 @@ namespace WebApplication.TCC.Api.Controllers
 
                 if (patients.Any())
                 {
-                    return Ok(patients.Count());
+                    return Ok(patients);
                 }
 
                 return NoContent();
@@ -73,6 +76,30 @@ namespace WebApplication.TCC.Api.Controllers
             {
                 return BadRequest(new { warningMessage = "Doctor not found." });
             }
+        }
+
+        [HttpGet("{doctorId}/{urlName}/{value}")]
+        public IActionResult GetPatientsOfADoctorByValue(string doctorId, string urlName, string value)
+        {
+            if (IsDoctorFound(doctorId))
+            {
+                IList<Patient> patients = Repository.FindAll.ToList();
+                IEnumerable<Patient> patientsOfDoctor = patients.Where(p => p.DoctorId.Equals(doctorId));
+
+                switch (urlName)
+                {
+                    case "sus":
+                        return Ok(patientsOfDoctor.Where(p => p.Document.Equals(value)));
+                    case "name":
+                        return Ok(patientsOfDoctor.Where(p => p.UserName.Equals(value)));
+                    case "birthdate":
+                        return Ok(patientsOfDoctor.Where(p => p.Birthdate.Equals(value)));
+                    default:
+                        break;
+                }
+            }
+
+            return BadRequest(new { warningMessage = "Doctor not found." });
         }
 
         private bool IsDoctorFound(string doctorId)

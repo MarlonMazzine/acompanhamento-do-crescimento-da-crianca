@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using WebApplication.TCC.Context.Datas;
 using WebApplication.TCC.Context.Models;
 
@@ -22,18 +24,8 @@ namespace WebApplication.TCC.Api.Controllers
         [HttpPost]
         public IActionResult Register([FromBody] HeightWeight model)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && this.IsPatientExist(model.PatientId))
             {
-                using (var context = new PatientContext())
-                {
-                    Patient patient = context.Patients.Find(model.PatientId);
-
-                    if (patient == null)
-                    {
-                        return BadRequest();
-                    }
-                }
-
                 Repository.Insert(model);
                 Uri uri = new Uri($"{Request.Scheme}://{Request.Host.Value}/weightheight/{model.Id}");
 
@@ -41,6 +33,33 @@ namespace WebApplication.TCC.Api.Controllers
             }
 
             return BadRequest();
+        }
+
+        [HttpGet("{patientId}")]
+        public IActionResult GetByPatientId(string patientId)
+        {
+            if (!this.IsPatientExist(patientId))
+            {
+                return BadRequest(new { errorMessage = "Patient not found." });
+            }
+
+            IList<HeightWeight> heightWeight = Repository.FindAll.ToList();
+            IEnumerable<HeightWeight> heightWeightOfPatient = heightWeight.Where(hW => hW.PatientId.Equals(patientId));
+
+            if (heightWeightOfPatient.Count() == 0)
+            {
+                return NoContent();
+            }
+
+            return Ok(heightWeightOfPatient);
+        }
+
+        private bool IsPatientExist(string patientId)
+        {
+            using (var context = new PatientContext())
+            {
+                return context.Patients.Find(patientId) != null;
+            }
         }
     }
 }

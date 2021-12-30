@@ -24,7 +24,7 @@
           "netcoreapp2.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "\\\\msbuild\\nuget.packages": {},
           "https://www.nuget.org/api/v2/": {}
         },
         "frameworks": {
@@ -109,7 +109,7 @@
           "netcoreapp2.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "\\\\msbuild\\nuget.packages": {},
           "https://www.nuget.org/api/v2/": {}
         },
         "frameworks": {
@@ -291,7 +291,7 @@
           "netcoreapp2.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "\\\\msbuild\\nuget.packages": {},
           "https://www.nuget.org/api/v2/": {}
         },
         "frameworks": {

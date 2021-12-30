@@ -10,8 +10,8 @@ using WebApplication.TCC.Context.Datas;
 namespace WebApplication.TCC.Context.Migrations
 {
     [DbContext(typeof(UserContext))]
-    [Migration("20210819225109_User-Context")]
-    partial class UserContext
+    [Migration("20210912165207_General-Context")]
+    partial class GeneralContext
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -204,6 +204,10 @@ namespace WebApplication.TCC.Context.Migrations
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("height_weight_id");
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnName("creation_date")
+                        .HasColumnType("TIMESTAMP WITHOUT TIME ZONE");
 
                     b.Property<decimal>("Height")
                         .HasColumnName("height")

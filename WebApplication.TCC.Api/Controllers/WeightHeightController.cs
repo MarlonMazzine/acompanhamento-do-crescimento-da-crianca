@@ -26,6 +26,7 @@ namespace WebApplication.TCC.Api.Controllers
         {
             if (ModelState.IsValid && this.IsPatientExist(model.PatientId))
             {
+                model.CreationDate = DateTime.Now;
                 Repository.Insert(model);
                 Uri uri = new Uri($"{Request.Scheme}://{Request.Host.Value}/weightheight/{model.Id}");
 

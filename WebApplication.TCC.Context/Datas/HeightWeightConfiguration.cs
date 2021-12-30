@@ -31,6 +31,12 @@ namespace WebApplication.TCC.Context.Datas
                 .HasColumnName("patient_id")
                 .HasColumnType("TEXT")
                 .IsRequired();
+
+            builder
+                .Property(p => p.CreationDate)
+                .HasColumnName("creation_date")
+                .HasColumnType("TIMESTAMP WITHOUT TIME ZONE")
+                .IsRequired();
         }
     }
 }

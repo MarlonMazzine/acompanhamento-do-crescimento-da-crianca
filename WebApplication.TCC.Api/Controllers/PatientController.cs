@@ -64,7 +64,10 @@ namespace WebApplication.TCC.Api.Controllers
         {
             if (!new CnsValidator().IsCnsValid(model.Document))
             {
-                return BadRequest(new { errorMessage = "Patient's document is invalid." });
+                return BadRequest("Patient's document is invalid.");
+            } else if (!new BirthdateValidator().IsBirthdateValid(model.Birthdate))
+            {
+                return BadRequest("Patient's birthdate is invalid.");
             }
 
             if (IsDoctorFound(model.DoctorId))
@@ -101,6 +104,14 @@ namespace WebApplication.TCC.Api.Controllers
 
             return BadRequest(new { warningMessage = "Doctor not found." });
         }
+
+        //private IEnumerable<HeightWeight> GetPatienHeightsAndWeights(string id)
+        //{
+        //    using (var context = new PatientContext())
+        //    {
+        //        return context.HeightWeight.
+        //    }
+        //}
 
         private bool IsDoctorFound(string doctorId)
         {

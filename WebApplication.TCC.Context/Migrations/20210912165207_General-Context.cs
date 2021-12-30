@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace WebApplication.TCC.Context.Migrations
 {
-    public partial class UserContext : Migration
+    public partial class GeneralContext : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -85,7 +85,8 @@ namespace WebApplication.TCC.Context.Migrations
                     height_weight_id = table.Column<string>(nullable: false),
                     weight = table.Column<decimal>(type: "NUMERIC", nullable: false),
                     height = table.Column<decimal>(type: "NUMERIC", nullable: false),
-                    patient_id = table.Column<string>(type: "TEXT", nullable: false)
+                    patient_id = table.Column<string>(type: "TEXT", nullable: false),
+                    creation_date = table.Column<DateTime>(type: "TIMESTAMP WITHOUT TIME ZONE", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -203,6 +203,10 @@ namespace WebApplication.TCC.Context.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnName("height_weight_id");
 
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnName("creation_date")
+                        .HasColumnType("TIMESTAMP WITHOUT TIME ZONE");
+
                     b.Property<decimal>("Height")
                         .HasColumnName("height")
                         .HasColumnType("NUMERIC");
